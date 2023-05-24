@@ -49,6 +49,11 @@ function App() {
         if (!currentTab) navigate(tabLists.post)
     }, [currentTab])
 
+    const changeLanguage = (lang: string) => {
+        localStorage.setItem("c-language", lang)
+        window.location.reload()
+    }
+
     return (
         <div>
             <header>
@@ -64,6 +69,20 @@ function App() {
                     ))}
                 </div>
             </header>
+            <div>
+                <button
+                    onClick={() => changeLanguage("en-us")}
+                    style={{ width: 50 }}
+                >
+                    EN
+                </button>
+                <button
+                    onClick={() => changeLanguage("vi-vi")}
+                    style={{ width: 50 }}
+                >
+                    VI
+                </button>
+            </div>
             <Outlet />
         </div>
     )

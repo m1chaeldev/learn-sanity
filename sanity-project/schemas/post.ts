@@ -4,6 +4,7 @@ export default defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
+  i18n: true,
   fields: [
     defineField({
       name: 'title',

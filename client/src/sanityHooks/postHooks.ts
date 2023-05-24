@@ -1,7 +1,8 @@
 import sanityClient from "../sanity-client"
+import getScheme from "../utils/common/getScheme"
 
 export async function getPosts() {
-    const posts = await sanityClient.fetch('*[_type == "post"]')
+    const posts = await sanityClient.fetch(getScheme("post"))
     return posts
 }
 
